@@ -1,0 +1,22 @@
+name: Test Vault CLI
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "**.md"
+  pull_request:
+    paths-ignore:
+      - "**.md"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Test cli
+    steps:
+      - name: Install vault
+        uses: GitKaran/install-vault-cli@master
+      - name: Verify version
+        run: vault -version
