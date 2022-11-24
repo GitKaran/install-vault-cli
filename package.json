@@ -1,0 +1,34 @@
+{
+  "name": "install-vault-cli",
+  "version": "1.0.0",
+  "description": "Install vault cli for github actions",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "prepare": "ncc build index.js -o dist --source-map --license licenses.txt",
+    "test": "jest",
+    "all": "npm run lint && npm run prepare && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitKaran/install-vault-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GitKaran/install-vault-cli/issues"
+  },
+  "homepage": "https://github.com/GitKaran/install-vault-cli#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/tool-cache": "^2.0.1",
+    "@hashicorp/js-releases": "^1.6.1",
+    "@octokit/rest": "^19.0.3"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.34.0",
+    "eslint": "^8.0.0",
+    "jest": "^28.1.3"
+  }
+}
