@@ -1,0 +1,15 @@
+name: 'Install Vault Cli Action'
+description: 'Installs hashicorp vault cli'
+inputs:
+  vault_version:
+    description: 'Version of vault cli to install'
+    required: false
+    default: latest
+  github_token:
+    description: 'Used to get information from Github API'
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
